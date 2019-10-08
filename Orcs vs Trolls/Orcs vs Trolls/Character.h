@@ -25,4 +25,5 @@ public:
 	int scrolls;
 	int score;
 	int health;
+	int gold;
 };

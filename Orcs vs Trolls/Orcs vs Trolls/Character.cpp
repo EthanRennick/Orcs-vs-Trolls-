@@ -6,6 +6,6 @@ Character::Character()
 	score = 0;
 	weapons = 0;
 	scrolls = 0;
-
+	health = 0;
 
 };

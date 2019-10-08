@@ -7,6 +7,7 @@ class Troll : public Character {
 public:
 	void fly() { std::cout << "Average Dooper is flapping and flying" << std::endl; }
 	//this guy has implemented fly
+
 	Troll();
 	void meleeAttack();
 	void magicAttack();
