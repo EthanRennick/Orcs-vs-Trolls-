@@ -12,7 +12,10 @@ public:
 	void meleeAttack();
 	void magicAttack();
 	void move();
-	void displayStats();
+	void defend();
+	void quaffPotion();
+	//void displayStats();
+
 
 private:
 

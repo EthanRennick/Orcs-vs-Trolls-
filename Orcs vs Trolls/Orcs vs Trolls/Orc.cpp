@@ -1,5 +1,4 @@
 #include "Orc.h"
-#include <iostream>
 
 Orc::Orc()
 {
@@ -22,6 +21,14 @@ void Orc::magicAttack()
 }
 
 void Orc::move()
+{
+}
+
+void Orc::defend()
+{
+}
+
+void Orc::quaffPotion()
 {
 }
 

@@ -1,28 +1,24 @@
+/// <summary>
+/// Ethan Rennick
+/// C00240102
+/// started: 2.10.19
+/// time taken:
+/// 
+/// ---
+/// this is a phil project
+/// i must show i understand
+/// Pointers, polymorphism, Inheritance and 
+/// 
+/// ---
+/// known bugs?
+/// 
+/// </summary>
 #include <iostream>
 #include "Game.h"
-#include "Character.h"
-#include "Orc.h"
-#include "Troll.h"
 
-
-//using namespace std;
-
-void intro();
-void howToPlay();
-void orcSide();
-void trollSide();
-bool side = 0;
-void shopping();
-Troll troll;
-Orc orc;
-Character *player;
-void arenaEntrance();
-
-
+//main
 int main(void)
 {
-
-
 	//teach the rules
 	howToPlay();
 	system("pause");
@@ -270,6 +266,13 @@ void arenaEntrance()
 		std::cout << "The guard eyes you up and down.\n";
 		std::cout << "You are directed to the area reserved for weaklings.\n";
 		std::cout << "*** *** *** *** *** *** ***\n";
+		enemy = &basicEnemy;
+		std::cout << "A wimpy looking troll stands opposite you.\n";
+		std::cout << "'Looks like we'll be fighting today' he says, grinning.\n";
+		std::cout << "*** *** *** *** *** *** ***\n";
+		player->displayStats();
+		std::cout << "*** *** *** *** *** *** ***\n";
+		enemy->displayStats();
 
 	}
 	else if (player->score >= 2 && player->score < 4) //medium
@@ -277,6 +280,13 @@ void arenaEntrance()
 		std::cout << "The guard eyes you up and down.\n";
 		std::cout << "You are directed to the area reserved for Medium strength fighters.\n";
 		std::cout << "*** *** *** *** *** *** ***\n";
+		enemy = &mediumEnemy;
+		std::cout << "A fairly strong looking orc stands opposite you.\n";
+		std::cout << "'Looks like we'll be fighting today' he says, grimacing.\n";
+		std::cout << "*** *** *** *** *** *** ***\n";
+		player->displayStats();
+		std::cout << "*** *** *** *** *** *** ***\n";
+		enemy->displayStats();
 
 	}
 	else if (player->score >= 4 && player->score < 6)//hard
@@ -284,6 +294,13 @@ void arenaEntrance()
 		std::cout << "The guard eyes you up and down.\n";
 		std::cout << "You are directed to the area reserved for possible champions.\n";
 		std::cout << "*** *** *** *** *** *** ***\n";
+		enemy = &hardEnemy;
+		std::cout << "An extremly dangerous looking beast stands opposite you.\n";
+		std::cout << "'I am going to chew you up, champion!' he yells, angrily.\n";
+		std::cout << "*** *** *** *** *** *** ***\n";
+		player->displayStats();
+		std::cout << "*** *** *** *** *** *** ***\n";
+		enemy->displayStats();
 
 	}
 };

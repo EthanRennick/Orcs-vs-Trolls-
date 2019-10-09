@@ -13,33 +13,75 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Enemies">
+      <UniqueIdentifier>{206cb1f9-3d06-4ca4-a69e-2452dbf96290}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Races">
+      <UniqueIdentifier>{6a7fa0de-ea4d-4ce8-93d3-d584a7fb2327}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Races">
+      <UniqueIdentifier>{607793d8-97b2-4678-95b3-c04cfabd8b0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Enemies">
+      <UniqueIdentifier>{bb99f68a-21e5-4cee-96f5-76656ae55153}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Types">
+      <UniqueIdentifier>{3c93e486-5d99-4595-b37e-00aac2d8eee7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Types">
+      <UniqueIdentifier>{0e0e19b8-611a-4760-8606-7ac06d2fc270}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Character.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Orc.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Troll.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Races</Filter>
+    </ClCompile>
+    <ClCompile Include="Orc.cpp">
+      <Filter>Source Files\Races</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicEnemy.cpp">
+      <Filter>Source Files\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="HardEnemy.cpp">
+      <Filter>Source Files\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="MediumEnemy.cpp">
+      <Filter>Source Files\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="Character.cpp">
+      <Filter>Source Files\Types</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Source Files\Types</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Character.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Orc.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Troll.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Game.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicEnemy.h">
+      <Filter>Header Files\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="HardEnemy.h">
+      <Filter>Header Files\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="MediumEnemy.h">
+      <Filter>Header Files\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Orc.h">
+      <Filter>Header Files\Races</Filter>
+    </ClInclude>
+    <ClInclude Include="Troll.h">
+      <Filter>Header Files\Races</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>Header Files\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Header Files\Types</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

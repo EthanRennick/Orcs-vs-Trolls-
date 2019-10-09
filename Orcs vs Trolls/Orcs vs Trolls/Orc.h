@@ -6,6 +6,7 @@
 /// so an orc char can barrelroll and walk but a troll character can just fly
 /// </summary>
 class Orc : public Character {
+
 public:
 	//void barrelRoll() { std::cout << "rooooooolllllllllllinggggggg" << std::endl; }
 	//void walk() { std::cout << "Doopers have a really cool walk!" << std::endl; }
@@ -16,6 +17,8 @@ public:
 	void meleeAttack();
 	void magicAttack();
 	void move();
+	void defend();
+	void quaffPotion();
 
 private:
 	

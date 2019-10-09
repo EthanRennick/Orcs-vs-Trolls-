@@ -18,6 +18,8 @@ public:
 	virtual void meleeAttack() =0;
 	virtual void magicAttack()=0;
 	virtual void move()=0;
+	virtual void defend() = 0;
+	virtual void quaffPotion() = 0;
 
 	void displayStats();
 

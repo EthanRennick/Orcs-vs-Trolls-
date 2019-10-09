@@ -8,6 +8,7 @@ Character::Character()
 	scrolls = 0;
 	health = 0;
 	potions = 0;
+	gold = 0;
 }
 void Character::displayStats()
 {

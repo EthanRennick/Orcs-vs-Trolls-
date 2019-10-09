@@ -23,3 +23,11 @@ void Troll::move()
 {
 }
 
+void Troll::defend()
+{
+}
+
+void Troll::quaffPotion()
+{
+}
+
