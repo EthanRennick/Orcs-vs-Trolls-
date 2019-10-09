@@ -9,12 +9,23 @@ Medium::Medium()
 	potions = 0;
 }
 
-void Medium::meleeAttack()
+int Medium::meleeAttack()
 {
+	return 4;
 }
 
-void Medium::magicAttack()
+int Medium::magicAttack()
 {
+	return 4;
+}
+
+void Medium::reset()
+{
+	weapons = 5;
+	scrolls = 5;
+	food = 10;
+	health = 10;
+	potions = 0;
 }
 
 void Medium::move()
@@ -25,6 +36,7 @@ void Medium::defend()
 {
 }
 
-void Medium::quaffPotion()
+int Medium::quaffPotion()
 {
+	return 6;
 }

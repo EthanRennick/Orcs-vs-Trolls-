@@ -11,13 +11,16 @@ Orc::Orc()
 	potions = 0;
 }
 
-void Orc::meleeAttack()
+int Orc::meleeAttack()
 {
-
+	//deal 3 damage
+	return 3;
 }
 
-void Orc::magicAttack()
+int Orc::magicAttack()
 {
+	//deal 2 damage
+	return 2;
 }
 
 void Orc::move()
@@ -26,10 +29,13 @@ void Orc::move()
 
 void Orc::defend()
 {
+	//take no damage
 }
 
-void Orc::quaffPotion()
+int Orc::quaffPotion()
 {
+	//drink potion
+	return 5;
 }
 
 

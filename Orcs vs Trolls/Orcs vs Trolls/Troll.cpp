@@ -11,23 +11,31 @@ Troll::Troll()
 	potions = 0;
 }
 
-void Troll::meleeAttack()
+int Troll::meleeAttack()
 {
+	//deal 2 damage
+	return 2;
 }
 
-void Troll::magicAttack()
+int Troll::magicAttack()
 {
+	//deal 3 damage
+	return 3;
 }
 
 void Troll::move()
 {
+
 }
 
 void Troll::defend()
 {
+	//take no damages
 }
 
-void Troll::quaffPotion()
+int Troll::quaffPotion()
 {
+	//drink a potion of health
+	return 5;
 }
 

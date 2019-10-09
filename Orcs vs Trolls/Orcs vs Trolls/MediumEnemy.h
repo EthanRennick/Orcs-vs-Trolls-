@@ -6,10 +6,11 @@ class Medium : public Enemy
 public:
 	Medium();
 
-	void meleeAttack();
-	void magicAttack();
+	int meleeAttack();
+	int magicAttack();
+	void reset();
 
 	void move();
 	void defend();
-	void quaffPotion();
+	int quaffPotion();
 };

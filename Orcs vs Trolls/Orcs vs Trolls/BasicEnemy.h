@@ -5,11 +5,12 @@ class Basic : public Enemy
 public:
 	Basic();
 
-	void meleeAttack();
-	void magicAttack();
+	int meleeAttack();
+	int magicAttack();
+	void reset();
 
-	 void move();
-	 void defend();
-	 void quaffPotion();
+	void move();
+	void defend();
+	int quaffPotion();
 
 };

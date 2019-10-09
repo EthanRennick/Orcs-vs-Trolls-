@@ -9,12 +9,23 @@ Hard::Hard()
 	potions = 1;
 }
 
-void Hard::meleeAttack()
+int Hard::meleeAttack()
 {
+	return 6;
 }
 
-void Hard::magicAttack()
+int Hard::magicAttack()
 {
+	return 6;
+}
+
+void Hard::reset()
+{
+	weapons = 9;
+	scrolls = 9;
+	food = 16;
+	health = 16;
+	potions = 1;
 }
 
 void Hard::move()
@@ -25,6 +36,7 @@ void Hard::defend()
 {
 }
 
-void Hard::quaffPotion()
+int Hard::quaffPotion()
 {
+	return 6;
 }

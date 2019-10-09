@@ -6,10 +6,11 @@ class Hard : public Enemy
 public:
 	Hard();
 
-	void meleeAttack();
-	void magicAttack();
+	int meleeAttack();
+	int magicAttack();
+	void reset();
 	
-	 void move();
-	 void defend();
-	 void quaffPotion();
+	void move();
+	void defend();
+	int quaffPotion();
 };

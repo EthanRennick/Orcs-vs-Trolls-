@@ -14,11 +14,11 @@ public:
 	//this guy has an implementation for fly
 
 	Orc();
-	void meleeAttack();
-	void magicAttack();
+	int meleeAttack();
+	int magicAttack();
 	void move();
 	void defend();
-	void quaffPotion();
+	int quaffPotion();
 
 private:
 	

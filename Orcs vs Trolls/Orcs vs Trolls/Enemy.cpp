@@ -1,5 +1,5 @@
 #include "Enemy.h"
-#include <iostream>
+
 Enemy::Enemy()
 {
 	int food =0;

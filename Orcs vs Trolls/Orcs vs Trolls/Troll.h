@@ -9,11 +9,11 @@ public:
 	//this guy has implemented fly
 
 	Troll();
-	void meleeAttack();
-	void magicAttack();
+	int meleeAttack();
+	int magicAttack();
 	void move();
 	void defend();
-	void quaffPotion();
+	int quaffPotion();
 	//void displayStats();
 
 

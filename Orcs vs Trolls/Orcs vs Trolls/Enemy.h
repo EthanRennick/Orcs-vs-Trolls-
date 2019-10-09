@@ -1,14 +1,14 @@
 #pragma once
+#include <iostream>
 
 class Enemy
 {
 public:
 	Enemy();
-	virtual void meleeAttack() = 0;
-	virtual void magicAttack() = 0;
-	virtual void move() = 0;
-	virtual void defend() = 0;
-	virtual void quaffPotion() = 0;
+	virtual int meleeAttack() = 0;
+	virtual int magicAttack() = 0;
+	virtual int quaffPotion() = 0;
+	virtual void reset() = 0;
 
 	void displayStats();
 

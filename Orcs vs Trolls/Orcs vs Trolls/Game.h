@@ -6,6 +6,7 @@
 #include "BasicEnemy.h"
 #include "HardEnemy.h"
 #include "MediumEnemy.h"
+#include <time.h>
 
 struct Points
 {
@@ -18,10 +19,12 @@ struct Points
 
 void intro();
 void howToPlay();
-void orcSide();
-void trollSide();
 bool side = 0;
 void shopping();
+void arenaEntrance();
+void fight();
+void enemyFight();
+bool victory = false;
 Troll troll;
 Orc orc;
 Basic basicEnemy;
@@ -29,7 +32,6 @@ Medium mediumEnemy;
 Hard hardEnemy;
 Character* player;
 Enemy* enemy;
-void arenaEntrance();
 
 
 

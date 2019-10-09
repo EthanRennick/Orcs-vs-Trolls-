@@ -15,13 +15,15 @@ class Character
 {
 public:
 	Character();
-	virtual void meleeAttack() =0;
-	virtual void magicAttack()=0;
+	virtual int meleeAttack() =0;
+	virtual int magicAttack()=0;
 	virtual void move()=0;
 	virtual void defend() = 0;
-	virtual void quaffPotion() = 0;
+	virtual int quaffPotion() = 0;
 
 	void displayStats();
+	void displayActions();
+	void displayEquipment();
 
 	//virtual functions can be overwritten by sub classes
 

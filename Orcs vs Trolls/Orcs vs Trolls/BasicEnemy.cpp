@@ -9,12 +9,25 @@ Basic::Basic()
 	potions = 0;
 }
 
-void Basic::meleeAttack()
+int Basic::meleeAttack()
 {
+	//deal two damage
+	return 2;
 }
 
-void Basic::magicAttack()
+int Basic::magicAttack()
 {
+	//deal two damage
+	return 2;
+}
+
+void Basic::reset()
+{
+	weapons = 3;
+	scrolls = 3;
+	food = 5;
+	health = 4;
+	potions = 0;
 }
 
 void Basic::move()
@@ -23,8 +36,11 @@ void Basic::move()
 
 void Basic::defend()
 {
+	//take no damage
 }
 
-void Basic::quaffPotion()
+int Basic::quaffPotion()
 {
+	//drink potion
+	return 5;
 }
