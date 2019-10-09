@@ -1,5 +1,5 @@
 #pragma once
-
+#include <iostream>
 //phil's piece:
 
 //class Character { //abstract class with no implementation for fly
@@ -18,6 +18,9 @@ public:
 	virtual void meleeAttack() =0;
 	virtual void magicAttack()=0;
 	virtual void move()=0;
+
+	void displayStats();
+
 	//virtual functions can be overwritten by sub classes
 
 	int food;
@@ -26,4 +29,5 @@ public:
 	int score;
 	int health;
 	int gold;
+	int potions;
 };

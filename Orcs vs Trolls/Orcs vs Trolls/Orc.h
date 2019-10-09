@@ -13,7 +13,6 @@ public:
 	//this guy has an implementation for fly
 
 	Orc();
-	void displayStats();
 	void meleeAttack();
 	void magicAttack();
 	void move();

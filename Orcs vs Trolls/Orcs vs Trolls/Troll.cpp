@@ -8,6 +8,7 @@ Troll::Troll()
 	score = 0;
 	health = 11;
 	gold = 10;
+	potions = 0;
 }
 
 void Troll::meleeAttack()
@@ -22,14 +23,3 @@ void Troll::move()
 {
 }
 
-void Troll::displayStats()
-{
-	std::cout << "Troll stats:\n-----\n";
-	std::cout << "Troll health: " << health << std::endl;
-	std::cout << "Troll food: " << food << std::endl;
-	std::cout << "Troll weapons: " << weapons << std::endl;
-	std::cout << "Troll scrolls: " << scrolls << std::endl;
-	std::cout << "Troll score: " << score << std::endl;
-	std::cout << "Troll gold: " << gold << std::endl;
-
-}
