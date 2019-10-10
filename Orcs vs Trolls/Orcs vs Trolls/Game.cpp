@@ -19,7 +19,7 @@
 /// pointers are literal pointers to things
 ///		eg in this game i use pointers to enemies
 /// Polymorphism is the morphing of one thing into another
-///		I dont use it much here cos i just made an enemy class
+///		Character things like display can work no matter if the Char is orc or troll
 /// encapsulation is having data which is public, protected or private
 ///		most of my data is public because I was taught to program that way 
 ///		I also find it easier
@@ -490,7 +490,7 @@ void fight()
 		}
 	}
 	//end of fight stuff
-	enemy->displayStats;
+	enemy->displayStats();
 	std::cout << "With love for your people in your heart, you slay your enemy.\n";
 	std::cout << "You have fought valiantly, and the enemy is defeated!\n";
 	std::cout << "*** *** *** *** *** *** ***\n";
@@ -505,7 +505,9 @@ void fight()
 	player->gold += randomGold;
 	std::cout << "You make some money off of people's bets.\n";
 	std::cout << "You make " << randomGold << " gold!\n";
+	system("pause");
 	std::cout << "*** *** *** *** *** *** ***\n";
+
 }
 
 
