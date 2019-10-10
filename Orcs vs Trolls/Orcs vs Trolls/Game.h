@@ -25,6 +25,7 @@ void arenaEntrance();
 void fight();
 void enemyFight();
 bool victory = false;
+void die();
 Troll troll;
 Orc orc;
 Basic basicEnemy;

@@ -25,6 +25,8 @@ public:
 	void displayActions();
 	void displayEquipment();
 
+	bool alive;
+
 	//virtual functions can be overwritten by sub classes
 
 	int food;

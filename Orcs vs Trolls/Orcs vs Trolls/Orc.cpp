@@ -9,6 +9,7 @@ Orc::Orc()
 	health = 10;
 	gold = 10;
 	potions = 0;
+	alive = true;
 }
 
 int Orc::meleeAttack()

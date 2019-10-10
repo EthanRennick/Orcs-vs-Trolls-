@@ -10,6 +10,7 @@ Character::Character()
 	health = 0;
 	potions = 0;
 	gold = 0;
+	alive = true;
 }
 
 //display the stats to the player

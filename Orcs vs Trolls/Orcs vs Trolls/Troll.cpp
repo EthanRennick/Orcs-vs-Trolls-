@@ -9,6 +9,7 @@ Troll::Troll()
 	health = 11;
 	gold = 10;
 	potions = 0;
+	alive = true;
 }
 
 int Troll::meleeAttack()

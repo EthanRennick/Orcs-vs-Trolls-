@@ -51,6 +51,8 @@ int main(void)
 \       \  /`
 /        \())";
 	std::cout << "\nHello there, I am the dungeon master.\n";
+	system("pause");
+	std::cout << "*** *** *** *** *** *** ***\n";
 	//teach the rules
 	howToPlay();
 	system("pause");
@@ -133,9 +135,9 @@ void howToPlay()
 	std::cout << "Greetings player. Let me learn you some rules.\n";
 	std::cout << "Firstly, we will choose a race to play as.\nOnce this is done, you will be shown your stats.\n";
 	std::cout << "It is up to you to lead your character out of the battle which ensues.\n";
-	std::cout << "You may melee attack, use magic attack or defend against incoming attacks to\nallow your health to recharge.\n";
+	std::cout << "You may melee attack, use magic attack or drink a potion to\nallow your health to recharge.\n";
 	std::cout << "The amount of turns you have will be limited by your food.\n";
-	std::cout << "Food, weapons and scrolls will be available for purchase after each battle.\n";
+	std::cout << "Food, weapons, potions, and scrolls will be available for purchase after each battle.\n";
 	std::cout << "Goodluck, champion.\n";
 	std::cout << "*** *** *** *** *** *** ***\n";
 
@@ -358,11 +360,11 @@ void arenaEntrance()
 //fight function
 void fight()
 {
-	bool playerDead = false;
+	bool condede = false;
 	bool enemyDead = false;
 	while (enemyDead == false)
 	{
-		if (playerDead == false)
+		if (player->health >= 1)
 		{
 			player->displayEquipment();
 			std::cout << "*** *** *** *** *** *** ***\n";
@@ -373,17 +375,20 @@ void fight()
 			player->displayActions();
 			std::cin >> action;
 
+			if (player->food == 0)
+			{
+				std::cout << "You are out of food and can no longer fight.\n";
+				action = 4;
+				//concede battle
+			}
+
+
 			//decides to execute an action
 			//if you dont have the food to continue fighting
 			//you will die
 			switch (action)
 			{
-				if (player->food == 0)
-				{
-					std::cout << "You are out of food and can no longer fight.\n";
-					action = 4;
-					//concede battle
-				}
+				
 			case 1:
 				action = 1;
 				{
@@ -469,12 +474,24 @@ void fight()
 				action = 4;
 				{
 					//player surrenders
+					std::cout << "*** *** *** *** *** *** ***\n";
 					std::cout << "You toss yourself to the ground.\nYour opponent pities you and you run off before he changes his mind.\n";
+					std::cout << "*** *** *** *** *** *** ***\n";
+
+					condede = true;
 					break;
 				}
 			}
 
 			if (enemy->health <= 0)
+			{
+				enemyDead = true;
+			}
+			else if (condede == true)
+			{
+				break;
+			}
+			else if (enemy->food <= 0)
 			{
 				enemyDead = true;
 			}
@@ -485,29 +502,56 @@ void fight()
 		}
 		else
 		{
+			std::cout << "*** *** *** *** *** *** ***\n";
 			std::cout << "You are dead.\n"; 
+			std::cout << "*** *** *** *** *** *** ***\n";
+
 			break;
 		}
 	}
-	//end of fight stuff
-	enemy->displayStats();
-	std::cout << "With love for your people in your heart, you slay your enemy.\n";
-	std::cout << "You have fought valiantly, and the enemy is defeated!\n";
-	std::cout << "*** *** *** *** *** *** ***\n";
 
-	enemy->reset(); //reset enemy to normal stats
+	if (player->alive == true)
+	{
+		if (condede == false)
+		{
+			//end of fight stuff
+			enemy->displayStats();
+			std::cout << "With love for your people in your heart, you slay your enemy.\n";
+			std::cout << "You have fought valiantly, and the enemy is defeated!\n";
+			std::cout << "*** *** *** *** *** *** ***\n";
 
-	player->score++;//update player score
+			enemy->reset(); //reset enemy to normal stats
 
-	//give player money
-	int randomGold = 0;
-	randomGold = rand() % 6 + 1;
-	player->gold += randomGold;
-	std::cout << "You make some money off of people's bets.\n";
-	std::cout << "You make " << randomGold << " gold!\n";
-	system("pause");
-	std::cout << "*** *** *** *** *** *** ***\n";
+			player->score++;//update player score
 
+			//give player money
+			int randomGold = 0;
+			randomGold = rand() % 6 + 1;
+			player->gold += randomGold;
+			std::cout << "You make some money off of people's bets.\n";
+			std::cout << "You make " << randomGold << " gold!\n";
+			system("pause");
+			std::cout << "*** *** *** *** *** *** ***\n";
+		}
+		else
+		{
+			std::cout << "*** *** *** *** *** *** ***\n";
+			std::cout << "You leave the arena with great sadness in your heart.\n";
+			std::cout << "You will probably never make it to champion rank at this rate.\n";
+			std::cout << "*** *** *** *** *** *** ***\n";
+
+			enemy->reset(); //reset enemy to normal stats
+
+			int randomGold = 0;
+			randomGold = rand() % 6 + 1;
+			player->gold += randomGold;
+			std::cout << "Embarassingly, You make some money off of people's bets...\n";
+			std::cout << "You make " << randomGold << " gold!\n";
+			std::cout << "*** *** *** *** *** *** ***\n";
+			system("pause");
+
+		}
+	}
 }
 
 
@@ -594,7 +638,10 @@ void enemyFight()
 			break;
 		}
 	}
-
+}
+void die()
+{
+	std::cout << "You have failed :C \n";
 };
 	
 
