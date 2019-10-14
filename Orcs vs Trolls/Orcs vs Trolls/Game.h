@@ -8,15 +8,7 @@
 #include "MediumEnemy.h"
 #include <time.h>
 
-struct Points
-{
-	//orc data
-	
-
-	//troll data
-	
-};
-
+int concedes;
 void intro();
 void howToPlay();
 bool side = 0;

@@ -19,20 +19,27 @@
 /// pointers are literal pointers to things
 ///		eg in this game i use pointers to enemies
 /// Polymorphism is the morphing of one thing into another
-///		Character things like display can work no matter if the Char is orc or troll
-/// encapsulation is having data which is public, protected or private
+///		char things like stats can work no matter if the Char is orc or troll (different for each but still works)
+/// encapsulation is having data which is public, protected or private and in classes
+///		ive got lots of classes for stuff
 ///		most of my data is public because I was taught to program that way 
 ///		I also find it easier
 /// ---
 /// known bugs?
-/// 
+/// win scenario is a bit dodgy
 /// </summary>
+
 #include <iostream>
 #include "Game.h"
+#include <stdlib.h>
+
+
 
 //main
 int main(void)
 {
+	concedes = 0;
+
 	std::cout << R"(
         .-"""".
        /       \
@@ -93,6 +100,38 @@ int main(void)
 	{
 		shopping();
 		arenaEntrance();
+		if (concedes == 3 || player->health <1)
+		{
+			std::cout << "Thanks for playing. Am sory dat u lost. pls try agen\n.";
+			std::cout << R"(                           ,--.
+                          {    }
+                          K,   }
+                         /  `Y`
+                    _   /   /
+                   {_'-K.__/
+                     `/-.__L._
+                     /  ' /`\_}
+                    /  ' /     You died!
+            ____   /  ' /
+     ,-'~~~~    ~~/  ' /_
+   ,'             ``~~~%%',
+  (                     %  Y
+ {                      %% I
+{      -                 %  `.
+|       ',                %  )
+|        |   ,..__      __. Y
+|    .,_./  Y ' / ^Y   J   )|
+\           |' /   |   |   ||
+ \          L_/    . _ (_,.'(
+  \,   ,      ^^""' / |      )
+    \_  \          /,L]     /
+      '-_`-,       ` `   ./`
+         `-(_            )
+             ^^\..___,.--`
+)";
+			break;
+		}
+
 	}
 
 }
@@ -119,12 +158,69 @@ void intro()
 	{
 		std::cout << "*** *** *** *** *** *** ***\n";
 		std::cout << "You have chosen the Orc side!\n";
+		std::cout << R"(
+    .7
+            .'/
+           / /
+          / /
+         / /
+        / /
+       / /
+      / /
+     / /         
+    / /          
+  __|/
+,-\__\
+|f-"Y\|
+\()7L/
+ cgD                           /\_ _/\
+ |\(                          .'  Y '>,
+  \ \                        / _   _   \
+   \\\                       )(_) (_)(|}
+    \\\                      {  4A   } /
+     \\\                   ---\uLuJJ/\l---
+      \\\                  ---|3    p)/---     meow! its orc neko time!
+       \\\___ __________      /nnm_n//
+       c7___-__,__-)\,__)(".  \_>-<_/D
+                  //V     \_"-._.__G G_c__.-__<"/ ( \
+                         <"-._>__-,G_.___)\   \7\
+                        ("-.__.| \"<.__.-" )   \ \
+                        |"-.__"\  |"-.__.-".\   \ \
+                        ("-.__"". \"-.__.-".|    \_\
+                        \"-.__""|!|"-.__.-".)     \ \
+                         "-.__""\_|"-.__.-"./      \ l
+                          ".__""">G>-.__.-">       .--,_
+)";
 		side = sidePicker;
+		system("Pause");
 	}
 	else if (sidePicker == 1) //chose the troll
 	{
 		std::cout << "*** *** *** *** *** *** ***\n";
 		std::cout << "You have chosen the Troll side!\n";	
+		std::cout << R"(
+		    *,*
+			/ \
+           /-- \
+ \ ' /   _/     )_
+- ( ) -('---''----)
+ / . \((()\^_^/)()     oofies! Friendsh- I mean, Trolls is magic!
+  \\_\ (()_)-((()()
+   '- \ )/\._./(()
+     '/\/( X   ) \
+     (___)|___/ ) \
+          |.#_|(___)
+         /\    \ ( (_
+         \/\/\/\) \\
+         | / \ |
+         |(   \|
+        _|_)__|_\_
+        )...()...(
+         | (   \ |     
+      .-'__,)  (  \
+	           '\_-,
+)";
+		system("Pause");
 		side = sidePicker;
 	}
 }
@@ -158,6 +254,29 @@ void shopping()
 	int potion = 3;
 
 	//intro to shop
+	std::cout << R"( 
+     .      .
+     |\____/|
+    (\|----|/)   Hello! Welcome, I am an 'arfling
+     \ 0  0 /
+      |    |
+   ___/\../\____
+  /     --       \
+ /  \         /   \
+|    \___/___/(   |
+\   /|  }{   | \  )
+ \  ||__}{__|  |  |
+  \  |;;;;;;;\  \ /
+   \ /;;;;;;;;| [,]
+     |;;;;;;/ |   
+     ||;;|\   |
+     ||;;/|   /
+     \_|:||__|
+      \ ;||  /
+      |= || =|
+      |= /\ =|
+      /_/  \_\
+)";
 	std::cout << "You enter the supplies shop.\n";
 	std::cout << "'Welcome to my shop!', a small halfling calls, from behind the counter.\n'What can I get you?\n";
 	std::cout << "*** *** *** *** *** *** ***\n";
@@ -314,6 +433,27 @@ void arenaEntrance()
 		enemy = &basicEnemy;
 		std::cout << "A wimpy looking troll stands opposite you.\n";
 		std::cout << "'Looks like we'll be fighting today' he says, grinning.\n";
+		std::cout << R"(	   _......._
+       .-'.'.'.'.'.'.`-.
+     .'.'.'.'.'.'.'.'.'.`.
+    /.'.'               '.\
+    |.'    _.--...--._     |
+    \    `._.-.....-._.'   /
+    |     _..- .-. -.._   |
+ .-.'    `.   ((@))  .'   '.-.
+( ^ \      `--.   .-'     / ^ )
+ \  /         .   .       \  /
+ /          .'     '.  .-    \
+( _.\    \ (_`-._.-'_)    /._\)
+ `-' \   ' .--.          / `-'
+     |  / /|_| `-._.'\   |
+     |   |       |_| |   /-.._
+ _..-\   `.--.______.'  |
+      \       .....     |
+       `.  .'      `.  /
+         \           .'
+		   `-..___..-` 
+)";
 		system("Pause");
 		std::cout << "*** *** *** *** *** *** ***\n";
 		std::cout << "You enter the arena.\n";
@@ -473,13 +613,35 @@ void fight()
 			case 4:
 				action = 4;
 				{
-					//player surrenders
-					std::cout << "*** *** *** *** *** *** ***\n";
-					std::cout << "You toss yourself to the ground.\nYour opponent pities you and you run off before he changes his mind.\n";
-					std::cout << "*** *** *** *** *** *** ***\n";
+					concedes++;
+					if (concedes == 3)
+					{
+						std::cout << "You toss yourself to the ground, and your enemy leaps forward.\n";
+						std::cout << "You are crushed under his weight and you hear the crowd cheer as you die.\n";
+						player->health = 0;
+						condede = true;
+						player->alive = false;
 
-					condede = true;
-					break;
+						//give player money
+						int randomGold = 0;
+						randomGold = rand() % 6 + 1;
+						player->gold += randomGold;
+						std::cout << "Sadly, you make some money off of people's bets.\n";
+						std::cout << "You make " << randomGold << " gold!\n";
+						system("pause");
+						std::cout << "*** *** *** *** *** *** ***\n";
+						break;
+					}
+					else
+					{
+						//player surrenders
+						std::cout << "*** *** *** *** *** *** ***\n";
+						std::cout << "You toss yourself to the ground.\nYour opponent pities you and you run off before he changes his mind.\n";
+						std::cout << "You have " << 3 - concedes << " concede actions left.\n";
+						std::cout << "*** *** *** *** *** *** ***\n";
+						condede = true;
+						break;
+					}
 				}
 			}
 
@@ -498,6 +660,13 @@ void fight()
 			else if (enemy->food > 0)
 			{
 				enemyFight();
+			}
+			else if (player->health < 1)
+			{
+				std::cout << "*** *** *** *** *** *** ***\n";
+				std::cout << "You are dead.\n";
+				std::cout << "*** *** *** *** *** *** ***\n";
+				break;
 			}
 		}
 		else
@@ -639,6 +808,7 @@ void enemyFight()
 		}
 	}
 }
+
 void die()
 {
 	std::cout << "You have failed :C \n";
